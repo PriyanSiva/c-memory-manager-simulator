@@ -27,3 +27,28 @@ void displayMemory(Block blocks[], int blockCount) {
     printf("----------------------------------\n");
 
 }
+
+void allocateMemory(Block blocks[], int *blockCount, int size){
+    for(int i = 0; i < *blockCount; i++){
+        if(blocks[i].free && blocks[i].size >= size){
+            
+            Block newBlock;
+
+            newBlock.size = blocks[i].size - size;
+            newBlock.start = blocks[i].start + size;
+            newBlock.free = 1;
+
+            blocks[i].size = size;
+            blocks[i].free = 0;
+
+            blocks[*blockCount] = newBlock;
+            (*blockCount)++;
+
+            printf("Allocated %d units at %d \n", size, blocks[i].start);
+
+            return;
+        }
+
+        printf("Nor enough memory available\n");
+    }
+}
