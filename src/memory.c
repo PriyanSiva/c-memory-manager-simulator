@@ -52,3 +52,18 @@ void allocateMemory(Block blocks[], int *blockCount, int size){
         printf("Nor enough memory available\n");
     }
 }
+
+void removeMemory(Block blocks[], int blockCount, int start) {
+    for(int i = 0; i < blockCount; i++){
+        if(blocks[i].start == start) {
+            if(blocks[i].free) {
+                printf("Block is already free at %d\n", start);
+            } else {
+                blocks[i].free = 1;
+                printf("Free memory at %d\n", start);
+            }
+            return;
+        }
+        printf("No blocks found at %d\n", start);
+    }
+}

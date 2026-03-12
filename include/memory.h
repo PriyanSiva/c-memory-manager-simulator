@@ -13,5 +13,6 @@ typedef struct {
 void initializeMemory(Block blocks[], int *blockCount);
 void displayMemory(Block blocks[], int blockCount);
 void allocateMemory(Block blocks[], int *blockCount, int size);
+void removeMemory(Block blocks[], int blockCount, int start);
 
 #endif

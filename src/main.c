@@ -12,5 +12,8 @@ int main(){
     displayMemory(blocks, blockCount);
     allocateMemory(blocks, &blockCount, 20);
     displayMemory(blocks, blockCount);
+    removeMemory(blocks, blockCount, 0);
+    displayMemory(blocks, blockCount);
+
     return 0;
 }
