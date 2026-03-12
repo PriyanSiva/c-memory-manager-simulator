@@ -67,3 +67,18 @@ void removeMemory(Block blocks[], int blockCount, int start) {
         printf("No blocks found at %d\n", start);
     }
 }
+
+void mergeBlock(Block blocks[], int *blockCount){
+    for(int i = 0; i < *blockCount - 1; i++){
+        if(blocks[i].free && blocks[i+1].free){
+            blocks[i].size = blocks[i].size + blocks[i+1].size;
+
+            for(int j = i+1; j < *blockCount -1; j++){
+                blocks[j] = blocks[j+1];
+            }
+
+            (*blockCount)--;
+            i--;
+        }
+    }
+}

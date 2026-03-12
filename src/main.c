@@ -12,7 +12,11 @@ int main(){
     displayMemory(blocks, blockCount);
     allocateMemory(blocks, &blockCount, 20);
     displayMemory(blocks, blockCount);
-    removeMemory(blocks, blockCount, 0);
+    removeMemory(blocks, blockCount, 30);
+    displayMemory(blocks, blockCount);
+    removeMemory(blocks, blockCount, 50);
+    displayMemory(blocks, blockCount);
+    mergeBlock(blocks, &blockCount);
     displayMemory(blocks, blockCount);
 
     return 0;
